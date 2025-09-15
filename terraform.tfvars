@@ -5,7 +5,7 @@ nginx_external_port = {
 }
 
 grafana_external_port = {
-    dev = 3001
+    dev = 3003
     qa  = 3000
     prod = 3000
 }

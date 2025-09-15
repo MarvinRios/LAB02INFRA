@@ -2,6 +2,12 @@ resource "docker_container" "postgre" {
   name  = "postgre-${terraform.workspace}"
   image = "postgres:13-trixie"
 
+env = [
+  "POSTGRES_USER=admin",
+  "POSTGRES_PASSWORD=admin123",
+  "POSTGRES_DB=appdb"
+  ]
+
   ports {
     internal = 5432
     external = var.postgre_external_port[terraform.workspace]
