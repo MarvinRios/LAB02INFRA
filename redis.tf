@@ -1,0 +1,9 @@
+resource "docker_container" "redis" {
+  name  = "redis-${terraform.workspace}"
+  image = "redis:latest"
+
+  ports {
+    internal = 6379
+    external = var.redis_external_port[terraform.workspace]
+  }
+}
