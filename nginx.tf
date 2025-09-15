@@ -1,9 +1,9 @@
 resource "docker_container" "nginx" {
-  name  = "nginx"
-  image = "nginx:stable-perl"
+  name  = "nginx-${terraform.workspace}"
+  image = "nginx:stable-alpine3.21-perl"
 
   ports {
     internal = 80
-    external = 3000
+    external = var.nginx_external_port[terraform.workspace]
   }
 }
