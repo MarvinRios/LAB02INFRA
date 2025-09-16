@@ -40,5 +40,6 @@ resource "docker_container" "app3" {
   networks_advanced {
     name = docker_network.app_net.name
   }
+  
   depends_on = [docker_container.grafana]
 }
