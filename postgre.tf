@@ -15,4 +15,9 @@ env = [
   networks_advanced {
     name = docker_network.persistence_net.name
   }
+  depends_on = [
+    docker_container.app1,
+    docker_container.app2,
+    docker_container.app3
+  ]
 }

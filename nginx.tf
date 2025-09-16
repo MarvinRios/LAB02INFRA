@@ -10,6 +10,7 @@ resource "docker_container" "app1" {
   networks_advanced {
     name = docker_network.app_net.name
   }
+  depends_on = [docker_container.grafana]
 }
 
 resource "docker_container" "app2" {
@@ -24,6 +25,7 @@ resource "docker_container" "app2" {
   networks_advanced {
     name = docker_network.app_net.name
   }
+  depends_on = [docker_container.grafana]
 }
 
 resource "docker_container" "app3" {
@@ -38,4 +40,5 @@ resource "docker_container" "app3" {
   networks_advanced {
     name = docker_network.app_net.name
   }
+  depends_on = [docker_container.grafana]
 }
