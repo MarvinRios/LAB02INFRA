@@ -12,4 +12,7 @@ env = [
     internal = 5432
     external = var.postgre_external_port[terraform.workspace]
   }
+  networks_advanced {
+    name = docker_network.persistence_net.name
+  }
 }
