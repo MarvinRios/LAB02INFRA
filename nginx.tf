@@ -1,10 +1,32 @@
-resource "docker_container" "nginx" {
-  count = 3
-  name  = "nginx-${terraform.workspace}-${count.index + 1}"
+resource "docker_container" "app1" {
+
+  name  = "nginx_01-${terraform.workspace}"
   image = "nginx:stable-perl"
 
   ports {
     internal = 80
-    external = var.nginx_external_port[terraform.workspace][count.index]
+    external = var.nginx_external_port[terraform.workspace]
+  }
+}
+
+resource "docker_container" "app2" {
+
+  name  = "nginx_02-${terraform.workspace}"
+  image = "nginx:stable-perl"
+
+  ports {
+    internal = 80
+    external = var.nginx_external_port_2[terraform.workspace]
+  }
+}
+
+resource "docker_container" "app3" {
+
+  name  = "nginx_03-${terraform.workspace}"
+  image = "nginx:stable-perl"
+
+  ports {
+    internal = 80
+    external = var.nginx_external_port_3[terraform.workspace]
   }
 }

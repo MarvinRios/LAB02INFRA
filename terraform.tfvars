@@ -1,12 +1,24 @@
 nginx_external_port = {
-    dev = [3000, 3001, 3002]
-    qa  = [4000, 4001, 4002]
-    prod = [81, 82, 83]
+    dev = 3000
+    qa  = 4000
+    prod = 81
+}
+
+nginx_external_port_2 = {
+    dev = 3001
+    qa  = 4001
+    prod = 82
+}
+
+nginx_external_port_3 = {
+    dev = 3002
+    qa  = 4002
+    prod = 83
 }
 
 grafana_external_port = {
-    dev = 3003
-    qa  = 3000
+    dev = 4000
+    qa  = 4001
     prod = 3000
 }
 
